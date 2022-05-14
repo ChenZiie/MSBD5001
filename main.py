@@ -87,8 +87,8 @@ if __name__ == '__main__':
     # print('Model: 1.Naive 2.Prompt')
     # idx_model = int(input())
 
+    dataset = pd.read_json('data/yelp_academic_dataset_review.json', lines=True)
 
-    dataset = pd.read_csv('data/sampling_20w_useful.csv')
     train, test = data_pre(dataset,config['English_Only'])
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
